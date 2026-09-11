@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="WaveData" format=3 uid="uid://uqcs38jo8mo1"]
+
+[ext_resource type="Script" uid="uid://dskrqikqhjbc3" path="res://Resource/Data/Wave/wave_data.gd" id="1_4a1l1"]
+
+[resource]
+script = ExtResource("1_4a1l1")
+wave_number = 8
+enemy_spawns = Array[Dictionary]([{
+"enemy_001": [],
+"enemy_002": [],
+"enemy_003": [],
+"enemy_004": [],
+"enemy_005": [],
+"enemy_006": []
+}])
+metadata/_custom_type_script = "uid://dskrqikqhjbc3"

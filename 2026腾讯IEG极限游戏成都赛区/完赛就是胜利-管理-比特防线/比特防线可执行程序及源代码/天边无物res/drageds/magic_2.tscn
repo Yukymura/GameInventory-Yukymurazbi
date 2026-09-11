@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://bxcgnpppa2he5"]
+
+[ext_resource type="PackedScene" uid="uid://d1hj5iyq4bqyh" path="res://天边无物res/draged.tscn" id="1_enh6f"]
+[ext_resource type="Texture2D" uid="uid://cd0m55aqx40kc" path="res://天边无物res/icon.png" id="2_rf3bs"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r3hah"]
+atlas = ExtResource("2_rf3bs")
+region = Rect2(96, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f6huk"]
+atlas = ExtResource("2_rf3bs")
+region = Rect2(64, 96, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kq2nc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r3hah")
+}],
+"loop": true,
+"name": &"activate",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f6huk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Magic2" unique_id=1311795775 instance=ExtResource("1_enh6f")]
+Multi = 3
+OriginCost = 200
+Tip = "低温降频强化器：使用2/1个比特将字节弹升级为低温降频字节弹的升级节点，使目标移速降低35%，攻速降低25%，持续2.5秒，价格200只可升级一次"
+Inputs = Array[Array]([[Vector2i(1, 1), Vector2i(0, 2)], [Vector2i(2, 1), Vector2i(0, 2)], [Vector2i(3, 1), Vector2i(0, 2)], [Vector2i(1, 1), Vector2i(0, 1)], [Vector2i(2, 1), Vector2i(0, 1)], [Vector2i(3, 1), Vector2i(0, 1)]])
+Outputs = Array[Array]([[Vector2i(7, 1)], [Vector2i(8, 1)], [Vector2i(9, 1)], [Vector2i(7, 1)], [Vector2i(8, 1)], [Vector2i(9, 2)]])
+MaxLevel = 1
+
+[node name="AnimatedSprite2D" parent="." index="1" unique_id=220510021]
+sprite_frames = SubResource("SpriteFrames_kq2nc")
+animation = &"activate"

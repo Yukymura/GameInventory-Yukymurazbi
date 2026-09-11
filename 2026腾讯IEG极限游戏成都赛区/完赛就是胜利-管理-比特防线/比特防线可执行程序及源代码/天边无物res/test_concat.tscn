@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cqtdwafwqpt2f"]
+
+[ext_resource type="Script" uid="uid://dkf0sumwbvoyx" path="res://天边无物res/test_concat.gd" id="1_1p2y7"]
+[ext_resource type="PackedScene" uid="uid://b8rr1uf2dyo4v" path="res://天边无物res/build_and_reward.tscn" id="2_ccgse"]
+
+[node name="TestConcat" type="Node" unique_id=2015334119]
+script = ExtResource("1_1p2y7")
+
+[node name="BuildAndReward" parent="." unique_id=526621473 instance=ExtResource("2_ccgse")]
+
+[connection signal="ToTower" from="BuildAndReward" to="." method="_on_build_and_reward_to_tower"]

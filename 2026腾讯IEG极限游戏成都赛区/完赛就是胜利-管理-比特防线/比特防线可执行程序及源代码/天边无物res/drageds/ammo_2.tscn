@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://c4dm3px72rxgw"]
+
+[ext_resource type="PackedScene" uid="uid://d1hj5iyq4bqyh" path="res://天边无物res/draged.tscn" id="1_c17y7"]
+[ext_resource type="Texture2D" uid="uid://cd0m55aqx40kc" path="res://天边无物res/icon.png" id="2_mplsn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ws3jk"]
+atlas = ExtResource("2_mplsn")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kbgjg"]
+atlas = ExtResource("2_mplsn")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wl0jp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ws3jk")
+}],
+"loop": true,
+"name": &"activate",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kbgjg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Ammo2" unique_id=1311795775 instance=ExtResource("1_c17y7")]
+OriginCost = 150
+Tip = "爆破字节生成器：生产爆破字节弹的生产节点，伤害6，范围半径2格，每4/3/2个比特生产1个普通字节弹（随等级提升），价格150电力"
+Inputs = Array[Array]([[Vector2i(0, 4)], [Vector2i(0, 3)], [Vector2i(0, 2)]])
+Outputs = Array[Array]([[Vector2i(2, 1)], [Vector2i(2, 1)], [Vector2i(2, 1)]])
+MaxLevel = 2
+
+[node name="AnimatedSprite2D" parent="." index="1" unique_id=220510021]
+sprite_frames = SubResource("SpriteFrames_wl0jp")
+animation = &"activate"

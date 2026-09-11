@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://x5d6c2xykshm"]
+
+[ext_resource type="Script" uid="uid://dp84v5ae0mggc" path="res://Resource/Data/Enemy/drop_data.gd" id="1_mo7tk"]
+[ext_resource type="Script" uid="uid://c5y7ajjb6vwml" path="res://Resource/Data/Enemy/effect_data.gd" id="2_l8m1s"]
+[ext_resource type="Script" uid="uid://cawqgupcj5xd6" path="res://Resource/Data/Enemy/death_spawn.gd" id="3_cf2xb"]
+[ext_resource type="Script" uid="uid://fr2it63hn2so" path="res://Resource/Data/Enemy/enemy_data.gd" id="5_4wp4a"]
+[ext_resource type="Texture2D" uid="uid://bdy6py0ityv8w" path="res://Import/Texture/enemy.png" id="5_a2ypn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mo7tk"]
+atlas = ExtResource("5_a2ypn")
+region = Rect2(48, 23, 24, 24)
+
+[resource]
+script = ExtResource("5_4wp4a")
+enemy_id = "enemy_003"
+enemy_name = "勒索病毒"
+texture = SubResource("AtlasTexture_mo7tk")
+scale = Vector2(0.8, 0.8)
+max_health = 240.0
+move_speed = 22.0
+reward_gold = 60
+attack_damage = 30.0
+attack_cooldown = 2.0

@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://cdx8wp3ur0uru"]
+
+[ext_resource type="PackedScene" uid="uid://ckmb045fxyl84" path="res://天边无物res/place_build.tscn" id="1_qc4im"]
+[ext_resource type="FontFile" uid="uid://oeopdtbvdiaf" path="res://天边无物res/fonts/Xolonium-Regular.ttf" id="2_6f2bs"]
+
+[node name="Reward" unique_id=282192579 instance=ExtResource("1_qc4im")]
+RowNum = 1
+ColumnNum = 4
+Space = 75.0
+IsMain = 2
+
+[node name="add" type="Button" parent="." index="0" unique_id=1266499001]
+offset_left = 423.0
+offset_top = 2.0
+offset_right = 577.0
+offset_bottom = 88.0
+theme_override_fonts/font = ExtResource("2_6f2bs")
+theme_override_font_sizes/font_size = 64
+text = "add
+"
+
+[node name="del" type="Button" parent="." index="1" unique_id=1850510672]
+offset_left = 601.0
+offset_right = 748.0
+offset_bottom = 86.0
+theme_override_fonts/font = ExtResource("2_6f2bs")
+theme_override_font_sizes/font_size = 64
+text = "del
+"
+
+[connection signal="pressed" from="add" to="." method="Create"]
+[connection signal="pressed" from="del" to="." method="Delete"]

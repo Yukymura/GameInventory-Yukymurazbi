@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://djfww06c4d6a6"]
+
+[ext_resource type="PackedScene" uid="uid://g22w25fy2xvf" path="res://天边无物res/box.tscn" id="1_0313c"]
+
+[node name="BoxDel" unique_id=523793241 instance=ExtResource("1_0313c")]
+
+[node name="AnimatedSprite2D" parent="." index="1" unique_id=431184389]
+animation = &"del"

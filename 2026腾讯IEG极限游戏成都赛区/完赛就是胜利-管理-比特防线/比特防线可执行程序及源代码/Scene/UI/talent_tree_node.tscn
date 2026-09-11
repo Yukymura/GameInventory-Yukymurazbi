@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://essmdehjounj"]
+
+[ext_resource type="Theme" uid="uid://cnuyi6qndliw8" path="res://Resource/Theme/theme_1.tres" id="1_njvwr"]
+
+[node name="TalentTreeNode" type="Button" unique_id=513699774]
+custom_minimum_size = Vector2(60, 20)
+offset_right = 60.0
+offset_bottom = 20.0
+size_flags_horizontal = 4
+theme = ExtResource("1_njvwr")
+autowrap_mode = 2

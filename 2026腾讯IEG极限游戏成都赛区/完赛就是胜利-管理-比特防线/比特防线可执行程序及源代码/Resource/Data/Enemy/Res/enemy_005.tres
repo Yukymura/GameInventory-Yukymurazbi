@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://d08g4ufo6strm"]
+
+[ext_resource type="Script" uid="uid://dp84v5ae0mggc" path="res://Resource/Data/Enemy/drop_data.gd" id="1_nxewx"]
+[ext_resource type="Script" uid="uid://c5y7ajjb6vwml" path="res://Resource/Data/Enemy/effect_data.gd" id="2_dvt3p"]
+[ext_resource type="Script" uid="uid://cawqgupcj5xd6" path="res://Resource/Data/Enemy/death_spawn.gd" id="3_hv505"]
+[ext_resource type="Script" uid="uid://fr2it63hn2so" path="res://Resource/Data/Enemy/enemy_data.gd" id="4_44vji"]
+[ext_resource type="PackedScene" uid="uid://c1mwciudtssiu" path="res://Scene/Entity/ammo.tscn" id="4_dvt3p"]
+[ext_resource type="Texture2D" uid="uid://bdy6py0ityv8w" path="res://Import/Texture/enemy.png" id="5_v66by"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mo7tk"]
+atlas = ExtResource("5_v66by")
+region = Rect2(4, 18, 17, 23)
+
+[resource]
+script = ExtResource("4_44vji")
+enemy_id = "enemy_005"
+enemy_name = "弹窗病毒"
+enemy_type = "ranged"
+texture = SubResource("AtlasTexture_mo7tk")
+scale = Vector2(0.8, 0.8)
+move_speed = 22.0
+reward_gold = 60
+attack_type = "ranged"
+attack_damage = 8.0
+attack_range = 120.0
+projectile_scene = ExtResource("4_dvt3p")

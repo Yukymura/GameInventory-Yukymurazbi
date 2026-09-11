@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://doycltkntynl"]
+
+[ext_resource type="Script" uid="uid://dmbir1u3qs2oi" path="res://Script/UI/damage_label.gd" id="1_pqrme"]
+
+[node name="DamageLabel" type="Control" unique_id=1121533649]
+top_level = true
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_pqrme")
+
+[node name="Label" type="Label" parent="." unique_id=1335142509]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1.0
+offset_top = -5.0
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 7

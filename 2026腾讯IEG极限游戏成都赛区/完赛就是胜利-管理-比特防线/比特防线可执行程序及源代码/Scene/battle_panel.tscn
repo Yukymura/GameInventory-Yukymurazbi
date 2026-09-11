@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://biq364qniuaf7"]
+
+[ext_resource type="Script" uid="uid://0jb8dbu3cvud" path="res://Script/battle_panel.gd" id="1_vvn71"]
+[ext_resource type="PackedScene" uid="uid://crf84lcqbew30" path="res://Scene/Entity/turret.tscn" id="2_r5j05"]
+[ext_resource type="PackedScene" uid="uid://b04v6dflidtra" path="res://Scene/Entity/base.tscn" id="4_8nf31"]
+[ext_resource type="PackedScene" uid="uid://b8e45w44lo6lt" path="res://Scene/spawner.tscn" id="4_oeegc"]
+[ext_resource type="PackedScene" uid="uid://c7h14ngo2flon" path="res://Scene/enemy_factory.tscn" id="5_oeegc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_78p6k"]
+size = Vector2(256, 120)
+
+[node name="BattlePanel" type="Node2D" unique_id=1612466355]
+script = ExtResource("1_vvn71")
+
+[node name="Base" parent="." unique_id=2051355904 instance=ExtResource("4_8nf31")]
+position = Vector2(36, 60)
+metadata/_edit_lock_ = true
+
+[node name="Turrets" type="Node2D" parent="." unique_id=1054352882]
+metadata/_edit_lock_ = true
+
+[node name="Turret0" parent="Turrets" unique_id=258526139 instance=ExtResource("2_r5j05")]
+position = Vector2(15, 12)
+
+[node name="Turret1" parent="Turrets" unique_id=634659798 instance=ExtResource("2_r5j05")]
+position = Vector2(15, 36)
+
+[node name="Turret2" parent="Turrets" unique_id=324015811 instance=ExtResource("2_r5j05")]
+position = Vector2(15, 60)
+
+[node name="Turret3" parent="Turrets" unique_id=453028539 instance=ExtResource("2_r5j05")]
+position = Vector2(15, 84)
+
+[node name="Turret4" parent="Turrets" unique_id=911541070 instance=ExtResource("2_r5j05")]
+position = Vector2(15, 108)
+
+[node name="Enemies" type="Node2D" parent="." unique_id=849490255]
+position = Vector2(256, 60)
+
+[node name="Labels" type="Node2D" parent="." unique_id=1759977325]
+
+[node name="Area" type="Area2D" parent="." unique_id=1406387736]
+position = Vector2(128, 60)
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area" unique_id=2119451910]
+shape = SubResource("RectangleShape2D_78p6k")
+
+[node name="Spawner" parent="." unique_id=100317031 instance=ExtResource("4_oeegc")]
+
+[node name="EnemyFactory" parent="Spawner" unique_id=402221021 instance=ExtResource("5_oeegc")]
+
+[node name="SpawnPoint" type="Marker2D" parent="." unique_id=535781485]
+position = Vector2(256, 60)

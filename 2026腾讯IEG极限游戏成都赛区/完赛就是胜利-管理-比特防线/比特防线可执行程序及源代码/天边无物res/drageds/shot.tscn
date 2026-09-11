@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://cr0qs3q1t52ph"]
+
+[ext_resource type="PackedScene" uid="uid://d1hj5iyq4bqyh" path="res://天边无物res/draged.tscn" id="1_kp7iu"]
+[ext_resource type="Texture2D" uid="uid://cd0m55aqx40kc" path="res://天边无物res/icon.png" id="2_xeyj8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hh12r"]
+atlas = ExtResource("2_xeyj8")
+region = Rect2(32, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3vb8s"]
+atlas = ExtResource("2_xeyj8")
+region = Rect2(0, 128, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tmjsn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hh12r")
+}],
+"loop": true,
+"name": &"activate",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3vb8s")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Shot" unique_id=1311795775 instance=ExtResource("1_kp7iu")]
+Tip = "杀毒塔的接收器，接收到字节弹后传送给对应的杀毒塔"
+Inputs = Array[Array]([[Vector2i(1, 1)], [Vector2i(2, 1)], [Vector2i(3, 1)], [Vector2i(4, 1)], [Vector2i(5, 1)], [Vector2i(6, 1)], [Vector2i(7, 1)], [Vector2i(8, 1)], [Vector2i(9, 1)]])
+Outputs = Array[Array]([[Vector2i(1, 1)], [Vector2i(2, 1)], [Vector2i(3, 1)], [Vector2i(4, 1)], [Vector2i(5, 1)], [Vector2i(6, 1)], [Vector2i(7, 1)], [Vector2i(8, 1)], [Vector2i(9, 1)]])
+Level = 8
+MaxLevel = 8
+IsEmit = true
+
+[node name="AnimatedSprite2D" parent="." index="1" unique_id=220510021]
+sprite_frames = SubResource("SpriteFrames_tmjsn")
+
+[node name="LevelLabel" parent="." index="3" unique_id=34957912]
+visible = false

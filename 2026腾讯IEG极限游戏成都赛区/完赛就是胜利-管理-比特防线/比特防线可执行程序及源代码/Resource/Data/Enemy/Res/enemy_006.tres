@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://n0h2asbp1wgs"]
+
+[ext_resource type="Script" uid="uid://dp84v5ae0mggc" path="res://Resource/Data/Enemy/drop_data.gd" id="1_ojt7y"]
+[ext_resource type="Script" uid="uid://c5y7ajjb6vwml" path="res://Resource/Data/Enemy/effect_data.gd" id="2_vxr1u"]
+[ext_resource type="Script" uid="uid://cawqgupcj5xd6" path="res://Resource/Data/Enemy/death_spawn.gd" id="3_ntnhc"]
+[ext_resource type="PackedScene" uid="uid://c1mwciudtssiu" path="res://Scene/Entity/ammo.tscn" id="4_ls551"]
+[ext_resource type="Script" uid="uid://fr2it63hn2so" path="res://Resource/Data/Enemy/enemy_data.gd" id="5_7cff4"]
+[ext_resource type="Texture2D" uid="uid://bdy6py0ityv8w" path="res://Import/Texture/enemy.png" id="6_5yd4y"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mo7tk"]
+atlas = ExtResource("6_5yd4y")
+region = Rect2(75, 12, 26, 35)
+
+[resource]
+script = ExtResource("5_7cff4")
+enemy_id = "enemy_006"
+enemy_name = "终极病毒"
+enemy_type = "ranged"
+texture = SubResource("AtlasTexture_mo7tk")
+scale = Vector2(0.8, 0.8)
+max_health = 1000.0
+reward_gold = 60
+attack_type = "ranged"
+attack_damage = 60.0
+attack_range = 100.0
+attack_cooldown = 2.0
+projectile_scene = ExtResource("4_ls551")

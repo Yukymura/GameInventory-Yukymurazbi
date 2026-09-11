@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://7152fjsdpiu0"]
+
+[ext_resource type="Script" uid="uid://bpp5j0j0kntkw" path="res://Script/UI/talent_tree.gd" id="1_3y5ns"]
+[ext_resource type="Theme" uid="uid://cnuyi6qndliw8" path="res://Resource/Theme/theme_1.tres" id="2_6ofna"]
+[ext_resource type="StyleBox" uid="uid://c77m7qusm7vwj" path="res://Resource/Theme/StyleBox/style_box_gray_2.tres" id="3_mlax5"]
+[ext_resource type="PackedScene" uid="uid://essmdehjounj" path="res://Scene/UI/talent_tree_node.tscn" id="3_p2psn"]
+[ext_resource type="PackedScene" uid="uid://dp0cqpnm1w6nu" path="res://Scene/UI/talent_tree_line.tscn" id="4_aypy5"]
+[ext_resource type="Texture2D" uid="uid://d24c5spsho7kv" path="res://Import/Texture/texture.png" id="4_p2psn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aypy5"]
+atlas = ExtResource("4_p2psn")
+region = Rect2(224, 96, 32, 32)
+
+[node name="TalentTree" type="Panel" unique_id=1548876539]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_6ofna")
+script = ExtResource("1_3y5ns")
+node_scene = ExtResource("3_p2psn")
+line = ExtResource("4_aypy5")
+
+[node name="Panel" type="Panel" parent="." unique_id=1263649451]
+layout_mode = 0
+offset_left = -6.0
+offset_top = -5.0
+offset_right = 54.0
+offset_bottom = 29.0
+theme = ExtResource("2_6ofna")
+theme_override_styles/panel = ExtResource("3_mlax5")
+
+[node name="ElectricityLabel" type="Label" parent="Panel" unique_id=783948164]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 16.0
+offset_right = 41.0
+offset_bottom = 25.0
+theme_override_font_sizes/font_size = 8
+text = "0"
+
+[node name="TextureRect" type="TextureRect" parent="Panel" unique_id=736610814]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 9.0
+offset_right = 25.0
+offset_bottom = 25.0
+texture = SubResource("AtlasTexture_aypy5")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Connections" type="Node2D" parent="." unique_id=2015720010]
+
+[node name="Nodes" type="Control" parent="." unique_id=233935747]
+anchors_preset = 0
+
+[node name="Label" type="Label" parent="." unique_id=1087296865]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 13.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 15
+text = "防御塔升级模块"
+
+[node name="BackButton" type="Button" parent="." unique_id=1564383686]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -53.0
+offset_top = 8.0
+offset_right = -13.0
+offset_bottom = 24.0
+grow_horizontal = 0
+text = "返回"

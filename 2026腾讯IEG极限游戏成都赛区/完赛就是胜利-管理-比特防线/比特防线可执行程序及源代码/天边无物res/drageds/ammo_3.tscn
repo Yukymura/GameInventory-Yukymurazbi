@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://ch08g1cqxuam5"]
+
+[ext_resource type="PackedScene" uid="uid://d1hj5iyq4bqyh" path="res://天边无物res/draged.tscn" id="1_ook2b"]
+[ext_resource type="Texture2D" uid="uid://cd0m55aqx40kc" path="res://天边无物res/icon.png" id="2_flcyl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d4uvw"]
+atlas = ExtResource("2_flcyl")
+region = Rect2(160, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bi58i"]
+atlas = ExtResource("2_flcyl")
+region = Rect2(128, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h17m6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d4uvw")
+}],
+"loop": true,
+"name": &"activate",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bi58i")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Ammo3" unique_id=1311795775 instance=ExtResource("1_ook2b")]
+OriginCost = 150
+Tip = "穿甲字节生成器：生产穿甲字节弹的生产节点，伤害50，每8/6/4个比特生产1个普通字节弹（随等级提升），价格150电力"
+Inputs = Array[Array]([[Vector2i(0, 8)], [Vector2i(0, 6)], [Vector2i(0, 4)]])
+Outputs = Array[Array]([[Vector2i(3, 1)], [Vector2i(3, 1)], [Vector2i(3, 1)]])
+MaxLevel = 2
+
+[node name="AnimatedSprite2D" parent="." index="1" unique_id=220510021]
+sprite_frames = SubResource("SpriteFrames_h17m6")
+animation = &"activate"
+
+[node name="Panel" parent="." index="4" unique_id=692546005]
+metadata/_edit_use_anchors_ = true

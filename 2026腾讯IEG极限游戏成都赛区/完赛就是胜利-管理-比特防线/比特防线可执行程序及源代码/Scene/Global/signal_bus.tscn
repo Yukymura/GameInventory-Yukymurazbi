@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cdymirq6718up"]
+
+[ext_resource type="Script" uid="uid://dsl11fq1cd5yv" path="res://Script/Global/signal_bus.gd" id="1_xci5k"]
+
+[node name="SignalBus" type="Node" unique_id=1832062601]
+script = ExtResource("1_xci5k")

@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://ckmb045fxyl84"]
+
+[ext_resource type="Script" uid="uid://d07ryjtps65kr" path="res://天边无物res/PlaceBuild.cs" id="1_4nemd"]
+[ext_resource type="PackedScene" uid="uid://g22w25fy2xvf" path="res://天边无物res/box.tscn" id="2_4m3bi"]
+
+[node name="PlaceBuild" type="Node2D" unique_id=282192579]
+script = ExtResource("1_4nemd")
+BoxScene = ExtResource("2_4m3bi")
+RowNum = 5
+ColumnNum = 5
+Space = 24.0

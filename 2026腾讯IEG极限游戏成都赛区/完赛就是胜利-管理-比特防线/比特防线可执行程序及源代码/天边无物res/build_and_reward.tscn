@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://b8rr1uf2dyo4v"]
+
+[ext_resource type="Script" uid="uid://k4ovbko5fb2h" path="res://天边无物res/Shot.cs" id="1_pfru4"]
+[ext_resource type="PackedScene" uid="uid://ckmb045fxyl84" path="res://天边无物res/place_build.tscn" id="2_e2h5r"]
+[ext_resource type="PackedScene" uid="uid://bkirgiib2456w" path="res://天边无物res/data.tscn" id="3_jbixx"]
+[ext_resource type="PackedScene" uid="uid://cdx8wp3ur0uru" path="res://天边无物res/reward.tscn" id="4_gagu8"]
+[ext_resource type="PackedScene" uid="uid://corq4wjyi777y" path="res://天边无物res/drageds/arrow.tscn" id="5_50evk"]
+[ext_resource type="PackedScene" uid="uid://c4dm3px72rxgw" path="res://天边无物res/drageds/ammo_2.tscn" id="5_hp3vd"]
+[ext_resource type="PackedScene" uid="uid://d1yntp8nwtlxu" path="res://天边无物res/drageds/create_bit.tscn" id="5_sc2x6"]
+[ext_resource type="PackedScene" uid="uid://cr0qs3q1t52ph" path="res://天边无物res/drageds/shot.tscn" id="6_2p2so"]
+[ext_resource type="PackedScene" uid="uid://ch08g1cqxuam5" path="res://天边无物res/drageds/ammo_3.tscn" id="6_2w53u"]
+[ext_resource type="PackedScene" uid="uid://dsvvhhjk5clyd" path="res://天边无物res/shop_label.tscn" id="6_ve2g5"]
+[ext_resource type="PackedScene" uid="uid://b57gmefavu5ep" path="res://天边无物res/drageds/ammo_1.tscn" id="7_2p2so"]
+[ext_resource type="PackedScene" uid="uid://clfi3eop31mjq" path="res://天边无物res/drageds/three_way.tscn" id="8_hcpkp"]
+[ext_resource type="PackedScene" uid="uid://m7ux312qero3" path="res://天边无物res/drageds/created_money.tscn" id="8_m0wik"]
+[ext_resource type="PackedScene" uid="uid://diyudkstkne67" path="res://天边无物res/drageds/magic_1.tscn" id="10_1yhfq"]
+[ext_resource type="PackedScene" uid="uid://bxcgnpppa2he5" path="res://天边无物res/drageds/magic_2.tscn" id="11_p3w0s"]
+[ext_resource type="PackedScene" uid="uid://gg02g5j4avxq" path="res://天边无物res/drageds/to_left.tscn" id="14_wsphu"]
+[ext_resource type="PackedScene" uid="uid://cv4td16iv4dqg" path="res://天边无物res/drageds/to_right.tscn" id="15_bwq5h"]
+[ext_resource type="PackedScene" uid="uid://djfww06c4d6a6" path="res://天边无物res/drageds/box_del.tscn" id="18_hp3vd"]
+
+[node name="BuildAndReward" type="Node2D" unique_id=62113999]
+position = Vector2(-3, -26)
+scale = Vector2(0.2, 0.22)
+script = ExtResource("1_pfru4")
+
+[node name="Build" parent="." unique_id=282192579 instance=ExtResource("2_e2h5r")]
+position = Vector2(187, 309)
+ColumnNum = 7
+Space = 75.0
+IsMain = 1
+DataPath = "../Data"
+ShopIndex = Array[Vector2i]([Vector2i(0, 6), Vector2i(1, 6), Vector2i(2, 6), Vector2i(3, 6), Vector2i(4, 6), Vector2i(0, 2), Vector2i(0, 4)])
+ShopObject = Array[PackedScene]([ExtResource("6_2p2so"), ExtResource("6_2p2so"), ExtResource("6_2p2so"), ExtResource("6_2p2so"), ExtResource("6_2p2so"), ExtResource("5_sc2x6"), ExtResource("7_2p2so"), ExtResource("5_50evk"), ExtResource("5_50evk")])
+
+[node name="Data" parent="." unique_id=1506942248 instance=ExtResource("3_jbixx")]
+Scenes = Array[PackedScene]([ExtResource("7_2p2so"), ExtResource("5_hp3vd"), ExtResource("6_2w53u"), ExtResource("5_50evk"), ExtResource("8_m0wik"), ExtResource("5_sc2x6"), ExtResource("10_1yhfq"), ExtResource("11_p3w0s"), ExtResource("6_2p2so"), ExtResource("8_hcpkp"), ExtResource("14_wsphu"), ExtResource("15_bwq5h")])
+DirPath = "res://天边无物res/drageds"
+
+[node name="Reward" parent="." unique_id=1585803302 instance=ExtResource("4_gagu8")]
+position = Vector2(960, 845.4545)
+DataPath = "../Data"
+
+[node name="Package" parent="." unique_id=1538398920 instance=ExtResource("2_e2h5r")]
+position = Vector2(190, 868.1818)
+RowNum = 2
+ColumnNum = 6
+Space = 75.0
+ShopIndex = Array[Vector2i]([Vector2i(0, 0), Vector2i(0, 1)])
+ShopObject = Array[PackedScene]([ExtResource("5_50evk"), ExtResource("5_50evk")])
+
+[node name="Shop" parent="." unique_id=1635822688 instance=ExtResource("2_e2h5r")]
+position = Vector2(960, 940.90906)
+RowNum = 1
+ColumnNum = 4
+Space = 75.0
+IsMain = 3
+ShopIndex = Array[Vector2i]([Vector2i(0, 0), Vector2i(0, 1), Vector2i(0, 2), Vector2i(0, 3)])
+ShopObject = Array[PackedScene]([ExtResource("5_50evk"), ExtResource("14_wsphu"), ExtResource("15_bwq5h"), ExtResource("5_sc2x6")])
+ShopCanBuy = Array[bool]([true, true, true, true])
+ShopLabel = ExtResource("6_ve2g5")
+ShopLabelOffset = Vector2(0, 45)
+
+[node name="del" parent="." unique_id=100558318 instance=ExtResource("2_e2h5r")]
+position = Vector2(665, 944.1818)
+BoxScene = ExtResource("18_hp3vd")
+RowNum = 1
+ColumnNum = 1
+IsMain = 4
+
+[node name="RefreshShop" parent="." unique_id=344141048 instance=ExtResource("2_e2h5r")]
+position = Vector2(960, 1040.909)
+RowNum = 1
+ColumnNum = 2
+Space = 75.0
+IsMain = 5
+ShopObject = Array[PackedScene]([ExtResource("7_2p2so"), ExtResource("5_hp3vd"), ExtResource("6_2w53u"), ExtResource("8_m0wik"), ExtResource("5_sc2x6"), ExtResource("10_1yhfq"), ExtResource("11_p3w0s")])
+ShopLabel = ExtResource("6_ve2g5")
+ShopLabelOffset = Vector2(0, 35)
+RefreshMoney = 60
+
+[node name="Button" type="Button" parent="RefreshShop" unique_id=674845224]
+offset_left = 290.0
+offset_top = -18.181816
+offset_right = 485.0
+offset_bottom = 50.000008
+theme_override_font_sizes/font_size = 32
+text = "刷新（60）"
+
+[connection signal="GetEmit" from="Build" to="." method="EmitShot"]
+[connection signal="pressed" from="RefreshShop/Button" to="RefreshShop" method="Refresh"]

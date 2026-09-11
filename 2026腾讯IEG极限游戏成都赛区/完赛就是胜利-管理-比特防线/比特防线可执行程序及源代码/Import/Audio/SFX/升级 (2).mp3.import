@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cbey0152k83p"
+path="res://.godot/imported/升级 (2).mp3-329ac7e9e3281337de41ec2a87ec1269.mp3str"
+
+[deps]
+
+source_file="res://Import/Audio/SFX/升级 (2).mp3"
+dest_files=["res://.godot/imported/升级 (2).mp3-329ac7e9e3281337de41ec2a87ec1269.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

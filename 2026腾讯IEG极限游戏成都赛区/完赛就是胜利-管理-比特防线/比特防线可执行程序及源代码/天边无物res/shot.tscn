@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://88k23gv1h3cs"]
+
+[ext_resource type="Script" uid="uid://k4ovbko5fb2h" path="res://天边无物res/Shot.cs" id="1_awion"]
+
+[node name="Shot" type="Node" unique_id=1815870950]
+script = ExtResource("1_awion")

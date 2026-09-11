@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://gg02g5j4avxq"]
+
+[ext_resource type="PackedScene" uid="uid://d1hj5iyq4bqyh" path="res://天边无物res/draged.tscn" id="1_eqhjq"]
+[ext_resource type="Texture2D" uid="uid://cd0m55aqx40kc" path="res://天边无物res/icon.png" id="2_wri4t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w8cj7"]
+atlas = ExtResource("2_wri4t")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ir6o7"]
+atlas = ExtResource("2_wri4t")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4puuw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w8cj7")
+}],
+"loop": true,
+"name": &"activate",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ir6o7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="ToLeft" unique_id=1311795775 instance=ExtResource("1_eqhjq")]
+OriginCost = 10
+Tip = "  导线：输送比特和字节的线路。"
+FromTo = Array[Vector2i]([Vector2i(3, 0)])
+
+[node name="AnimatedSprite2D" parent="." index="1" unique_id=220510021]
+sprite_frames = SubResource("SpriteFrames_4puuw")
+animation = &"activate"
+
+[node name="LevelLabel" parent="." index="3" unique_id=34957912]
+visible = false

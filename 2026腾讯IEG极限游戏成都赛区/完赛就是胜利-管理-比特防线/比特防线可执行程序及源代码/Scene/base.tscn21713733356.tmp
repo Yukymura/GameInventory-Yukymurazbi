@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://b04v6dflidtra"]
+
+[ext_resource type="Script" uid="uid://ccniyor23cu3d" path="res://Script/base.gd" id="1_0ce0i"]
+[ext_resource type="Texture2D" uid="uid://doddxaxbiov8d" path="res://icon.svg" id="1_d3q2k"]
+[ext_resource type="Script" uid="uid://u4fgnkd45kqs" path="res://Component/health_component.gd" id="3_pntdf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7lj54"]
+size = Vector2(20, 600)
+
+[node name="Base" type="Area2D" unique_id=2051355904]
+script = ExtResource("1_0ce0i")
+
+[node name="HealthComponent" type="Node" parent="." unique_id=1706418695]
+script = ExtResource("3_pntdf")
+metadata/_custom_type_script = "uid://u4fgnkd45kqs"
+
+[node name="Texture" type="Sprite2D" parent="." unique_id=294120012]
+scale = Vector2(0.2, 5)
+texture = ExtResource("1_d3q2k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=524111046]
+shape = SubResource("RectangleShape2D_7lj54")

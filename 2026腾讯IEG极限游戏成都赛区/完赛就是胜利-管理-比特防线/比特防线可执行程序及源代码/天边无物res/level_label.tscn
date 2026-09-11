@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dpdvwjtoyylht"]
+
+[ext_resource type="PackedScene" uid="uid://dsvvhhjk5clyd" path="res://天边无物res/shop_label.tscn" id="1_5kaxw"]
+[ext_resource type="Script" uid="uid://b1t1gsb8itykw" path="res://天边无物res/ShopLabel.cs" id="2_bqwh1"]
+
+[node name="LevelLabel" unique_id=34957912 instance=ExtResource("1_5kaxw")]
+script = ExtResource("2_bqwh1")
+
+[node name="Label" parent="." index="0" unique_id=976893683]
+anchors_preset = 0
+anchor_left = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -14.0
+offset_top = -18.0
+offset_right = -6.0
+offset_bottom = -5.0
+grow_horizontal = 1
+grow_vertical = 1

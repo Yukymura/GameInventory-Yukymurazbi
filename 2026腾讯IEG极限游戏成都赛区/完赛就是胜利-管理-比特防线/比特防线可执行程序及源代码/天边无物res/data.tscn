@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bkirgiib2456w"]
+
+[ext_resource type="Script" uid="uid://ifq3p853na0g" path="res://天边无物res/Data.cs" id="1_ylaa1"]
+
+[node name="Data" type="Node" unique_id=1506942248]
+script = ExtResource("1_ylaa1")
+DirPath = "res://res/drageds"

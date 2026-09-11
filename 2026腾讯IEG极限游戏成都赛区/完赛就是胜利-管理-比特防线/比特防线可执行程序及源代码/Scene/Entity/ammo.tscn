@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://c1mwciudtssiu"]
+
+[ext_resource type="Script" uid="uid://cl7qy3aunsc2v" path="res://Script/Entity/ammo.gd" id="1_xbfy1"]
+[ext_resource type="Script" uid="uid://c5olygoh0dbox" path="res://Component/move_component.gd" id="2_ljnoa"]
+[ext_resource type="Texture2D" uid="uid://c7uwfqjnhdhvr" path="res://Import/Texture/AmmoTexture/ammo_normal.png" id="3_dw81k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8g5bt"]
+size = Vector2(14, 4)
+
+[node name="Ammo" type="Area2D" unique_id=41160097]
+script = ExtResource("1_xbfy1")
+
+[node name="MoveComponent" type="Node" parent="." unique_id=1179917936]
+script = ExtResource("2_ljnoa")
+metadata/_custom_type_script = "uid://c5olygoh0dbox"
+
+[node name="Texture" type="Sprite2D" parent="." unique_id=513541953]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_dw81k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=614487740]
+shape = SubResource("RectangleShape2D_8g5bt")

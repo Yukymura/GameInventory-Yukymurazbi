@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://d4mwhasl0q0jd"]
+
+[ext_resource type="Script" uid="uid://dp84v5ae0mggc" path="res://Resource/Data/Enemy/drop_data.gd" id="1_d7kyu"]
+[ext_resource type="Script" uid="uid://c5y7ajjb6vwml" path="res://Resource/Data/Enemy/effect_data.gd" id="2_8xc4v"]
+[ext_resource type="Script" uid="uid://cawqgupcj5xd6" path="res://Resource/Data/Enemy/death_spawn.gd" id="3_pnv1d"]
+[ext_resource type="Script" uid="uid://fr2it63hn2so" path="res://Resource/Data/Enemy/enemy_data.gd" id="4_0f24m"]
+[ext_resource type="Texture2D" uid="uid://bdy6py0ityv8w" path="res://Import/Texture/enemy.png" id="5_8rfqw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mo7tk"]
+atlas = ExtResource("5_8rfqw")
+region = Rect2(23, 23, 24, 24)
+
+[resource]
+script = ExtResource("4_0f24m")
+enemy_id = "enemy_004"
+enemy_name = "僵尸病毒"
+enemy_type = "tank"
+texture = SubResource("AtlasTexture_mo7tk")
+scale = Vector2(0.8, 0.8)
+max_health = 550.0
+move_speed = 13.0
+reward_gold = 60
+attack_damage = 32.0

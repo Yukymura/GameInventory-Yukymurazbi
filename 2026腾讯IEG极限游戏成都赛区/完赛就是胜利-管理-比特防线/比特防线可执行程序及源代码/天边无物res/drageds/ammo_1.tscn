@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://b57gmefavu5ep"]
+
+[ext_resource type="PackedScene" uid="uid://d1hj5iyq4bqyh" path="res://天边无物res/draged.tscn" id="1_t81iy"]
+[ext_resource type="Texture2D" uid="uid://cd0m55aqx40kc" path="res://天边无物res/icon.png" id="2_t3dgv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8mtui"]
+atlas = ExtResource("2_t3dgv")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t3dgv"]
+atlas = ExtResource("2_t3dgv")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_epksi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8mtui")
+}],
+"loop": true,
+"name": &"activate",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t3dgv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Ammo1" unique_id=1311795775 instance=ExtResource("1_t81iy")]
+OriginCost = 100
+Tip = "基础字节生成器：生产基础字节弹的生产节点，伤害10，每3/2/1个比特生产1个普通字节弹（随等级提升），价格100电力"
+Inputs = Array[Array]([[Vector2i(0, 3)], [Vector2i(0, 2)], [Vector2i(0, 1)]])
+Outputs = Array[Array]([[Vector2i(1, 1)], [Vector2i(1, 1)], [Vector2i(1, 1)]])
+MaxLevel = 2
+
+[node name="AnimatedSprite2D" parent="." index="1" unique_id=220510021]
+sprite_frames = SubResource("SpriteFrames_epksi")

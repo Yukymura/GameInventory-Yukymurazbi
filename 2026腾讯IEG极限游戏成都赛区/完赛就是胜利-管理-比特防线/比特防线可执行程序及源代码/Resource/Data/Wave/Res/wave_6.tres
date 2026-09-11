@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="WaveData" format=3 uid="uid://d23tm2uymcg8j"]
+
+[ext_resource type="Script" uid="uid://dskrqikqhjbc3" path="res://Resource/Data/Wave/wave_data.gd" id="1_byvfj"]
+
+[resource]
+script = ExtResource("1_byvfj")
+wave_number = 8
+enemy_spawns = Array[Dictionary]([{
+"enemy_001": [Vector2(108, 24), Vector2(144, 48), Vector2(240, -24), Vector2(288, -48), Vector2(384, 24), Vector2(408, 48)],
+"enemy_002": [Vector2(68, 0), Vector2(272, 24), Vector2(476, -48), Vector2(578, -24), Vector2(612, 0)],
+"enemy_003": [Vector2(96, 48), Vector2(384, 0), Vector2(342, -48), Vector2(456, -24)],
+"enemy_004": [Vector2(132, -48), Vector2(308, 48), Vector2(374, -24), Vector2(418, 24), Vector2(440, -48), Vector2(488, 24), Vector2(504, 0)],
+"enemy_005": [Vector2(78, 48), Vector2(208, 0), Vector2(234, 24), Vector2(273, 48), Vector2(266, -48), Vector2(90, -24), Vector2(188, 24), Vector2(256, -48)],
+"enemy_006": [Vector2(500, 48)]
+}])
+metadata/_custom_type_script = "uid://dskrqikqhjbc3"

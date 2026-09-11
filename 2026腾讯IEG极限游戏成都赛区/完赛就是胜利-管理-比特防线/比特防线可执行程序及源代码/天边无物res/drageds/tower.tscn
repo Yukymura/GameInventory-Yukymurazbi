@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://chr1fs8hrem6x"]
+
+[ext_resource type="PackedScene" uid="uid://d1hj5iyq4bqyh" path="res://天边无物res/draged.tscn" id="1_s1q0v"]
+
+[node name="Tower" unique_id=1311795775 instance=ExtResource("1_s1q0v")]
+Inputs = Array[Array]([[Vector2i(0, 10)]])
+Outputs = Array[Array]([[Vector2i(10, 5)]])
+IsEmit = true

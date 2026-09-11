@@ -1,0 +1,147 @@
+[gd_scene format=3 uid="uid://dgaomb7iah348"]
+
+[ext_resource type="Theme" uid="uid://cnuyi6qndliw8" path="res://Resource/Theme/theme_1.tres" id="1_32hua"]
+[ext_resource type="Script" uid="uid://sr6shtugbst" path="res://start_scene.gd" id="1_mmswq"]
+[ext_resource type="Shader" uid="uid://by7b3ia3d6mvt" path="res://Resource/Shader/pixel.gdshader" id="2_n8u4b"]
+[ext_resource type="Shader" uid="uid://c184y1y2ykmbt" path="res://Resource/Shader/CRT_shader.gdshader" id="4_e3n4g"]
+[ext_resource type="Texture2D" uid="uid://bmp2ryh08pjnt" path="res://Import/Texture/972C845067D1288AC8AEEA2FF091762F.png" id="4_pjwuu"]
+[ext_resource type="Texture2D" uid="uid://bdy6py0ityv8w" path="res://Import/Texture/enemy.png" id="5_nn8c3"]
+[ext_resource type="Texture2D" uid="uid://d24c5spsho7kv" path="res://Import/Texture/texture.png" id="5_pjwuu"]
+[ext_resource type="Material" uid="uid://w3ly61f2n4l0" path="res://Resource/Particle/particle_1.tres" id="6_t6odp"]
+[ext_resource type="Script" uid="uid://c778djbaxtnoi" path="res://Component/sway_component.gd" id="6_y1w5h"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_32hua"]
+shader = ExtResource("2_n8u4b")
+shader_parameter/pixel_size = 108
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t56sx"]
+atlas = ExtResource("5_pjwuu")
+region = Rect2(227, 100, 9, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pjwuu"]
+atlas = ExtResource("5_nn8c3")
+region = Rect2(75, 11, 26, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nn8c3"]
+atlas = ExtResource("5_nn8c3")
+region = Rect2(23, 23, 24, 34)
+filter_clip = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o38bk"]
+shader = ExtResource("4_e3n4g")
+shader_parameter/resolution = Vector2(320, 180)
+shader_parameter/scan_line_amount = 0.5
+shader_parameter/warp_amount = 0.05
+shader_parameter/vignette_amount = 0.5
+shader_parameter/vignette_intensity = 0.3
+shader_parameter/grille_amount = 0.05
+shader_parameter/brightness_boost = 1.2
+
+[node name="StartScene" type="Control" unique_id=150940932]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_32hua")
+script = ExtResource("1_mmswq")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1558729731]
+material = SubResource("ShaderMaterial_32hua")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_pjwuu")
+expand_mode = 1
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=959808551]
+modulate = Color(1, 1, 1, 0.15294118)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=864647998]
+position = Vector2(192, 108)
+amount = 16
+texture = SubResource("AtlasTexture_t56sx")
+lifetime = 8.0
+visibility_rect = Rect2(-192, -108, 384, 216)
+process_material = ExtResource("6_t6odp")
+
+[node name="TitleLabel" type="Label" parent="." unique_id=561070789]
+layout_mode = 0
+offset_left = 105.0
+offset_top = 30.0
+offset_right = 265.0
+offset_bottom = 71.0
+pivot_offset = Vector2(83, 23)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.19215687, 0.3372549, 0.21568628, 0.8235294)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 6
+theme_override_constants/shadow_offset_y = 9
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 40
+text = "比特防线"
+
+[node name="SwayComponent" type="Node2D" parent="TitleLabel" unique_id=1971425004]
+unique_name_in_owner = true
+script = ExtResource("6_y1w5h")
+sway_amount = 2.0
+stretch_amount = 0.05
+metadata/_custom_type_script = "uid://c778djbaxtnoi"
+
+[node name="Sprite1" type="Sprite2D" parent="." unique_id=1032232278]
+position = Vector2(133, 133)
+scale = Vector2(-2, 2)
+texture = SubResource("AtlasTexture_pjwuu")
+
+[node name="SwayComponent" type="Node2D" parent="Sprite1" unique_id=507375361]
+script = ExtResource("6_y1w5h")
+metadata/_custom_type_script = "uid://c778djbaxtnoi"
+
+[node name="Sprite2" type="Sprite2D" parent="." unique_id=1618377376]
+position = Vector2(247, 140)
+scale = Vector2(2, 2)
+texture = SubResource("AtlasTexture_nn8c3")
+
+[node name="SwayComponent" type="Node2D" parent="Sprite2" unique_id=1847770319]
+script = ExtResource("6_y1w5h")
+metadata/_custom_type_script = "uid://c778djbaxtnoi"
+
+[node name="StartButton" type="Button" parent="." unique_id=1373528987]
+layout_mode = 0
+offset_left = 97.0
+offset_top = 145.0
+offset_right = 172.0
+offset_bottom = 175.0
+theme_override_font_sizes/font_size = 10
+text = "开始游戏"
+
+[node name="ExitButton" type="Button" parent="." unique_id=7049114]
+layout_mode = 0
+offset_left = 212.0
+offset_top = 145.0
+offset_right = 287.0
+offset_bottom = 175.0
+theme_override_font_sizes/font_size = 10
+text = "结束游戏"
+
+[node name="ScreenEffect" type="ColorRect" parent="." unique_id=1790401449]
+material = SubResource("ShaderMaterial_o38bk")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_lock_ = true

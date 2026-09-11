@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://crf84lcqbew30"]
+
+[ext_resource type="Script" uid="uid://cd8ib4dmeran" path="res://Script/Entity/turret.gd" id="1_s43ga"]
+[ext_resource type="PackedScene" uid="uid://c1mwciudtssiu" path="res://Scene/Entity/ammo.tscn" id="2_htfsy"]
+[ext_resource type="Texture2D" uid="uid://copxc0ygcsj5o" path="res://Import/Texture/SlotTexture/slot_turret_head_on.png" id="2_savgj"]
+[ext_resource type="Texture2D" uid="uid://bmlhosllm5l5m" path="res://Import/Texture/SlotTexture/slot_turret.png" id="3_4ren6"]
+[ext_resource type="Texture2D" uid="uid://dracneypwu1s8" path="res://Import/Texture/SlotTexture/slot_turret_head_off.png" id="4_savgj"]
+[ext_resource type="Texture2D" uid="uid://d24c5spsho7kv" path="res://Import/Texture/texture.png" id="6_ampwn"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s43ga"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7oewn"]
+atlas = ExtResource("6_ampwn")
+region = Rect2(289, 1, 14, 94)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_81e4n"]
+atlas = ExtResource("6_ampwn")
+region = Rect2(273, 1, 14, 94)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hv2f2"]
+atlas = ExtResource("6_ampwn")
+region = Rect2(305, 1, 14, 94)
+
+[node name="Turret" type="Node2D" unique_id=258526139]
+script = ExtResource("1_s43ga")
+turret_on_texture = ExtResource("2_savgj")
+turret_off_texture = ExtResource("4_savgj")
+ammo_scene = ExtResource("2_htfsy")
+
+[node name="BaseTexture" type="Sprite2D" parent="." unique_id=1328979175]
+texture = ExtResource("3_4ren6")
+
+[node name="Texture" type="Sprite2D" parent="." unique_id=28436199]
+texture = ExtResource("4_savgj")
+offset = Vector2(5, 0)
+
+[node name="ShootPoint" type="Marker2D" parent="Texture" unique_id=887176112]
+scale = Vector2(2, 2)
+
+[node name="AttackRangeArea" type="Area2D" parent="." unique_id=537964587]
+
+[node name="AttackRangeShape" type="CollisionShape2D" parent="AttackRangeArea" unique_id=846030028]
+shape = SubResource("CircleShape2D_s43ga")
+
+[node name="ProgressBar" type="TextureProgressBar" parent="." unique_id=208218837]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -15.0
+offset_top = -12.0
+offset_right = -1.0
+offset_bottom = 84.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.25, 0.25)
+mouse_filter = 2
+fill_mode = 3
+nine_patch_stretch = true
+texture_under = SubResource("AtlasTexture_7oewn")
+texture_over = SubResource("AtlasTexture_81e4n")
+texture_progress = SubResource("AtlasTexture_hv2f2")
+
+[node name="CoolDownTimer" type="Timer" parent="." unique_id=877582331]

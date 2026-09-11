@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://ox5snmtn56p7"]
+
+[ext_resource type="Script" uid="uid://dp84v5ae0mggc" path="res://Resource/Data/Enemy/drop_data.gd" id="1_jod13"]
+[ext_resource type="Script" uid="uid://c5y7ajjb6vwml" path="res://Resource/Data/Enemy/effect_data.gd" id="2_oadak"]
+[ext_resource type="Script" uid="uid://cawqgupcj5xd6" path="res://Resource/Data/Enemy/death_spawn.gd" id="3_o5que"]
+[ext_resource type="Script" uid="uid://fr2it63hn2so" path="res://Resource/Data/Enemy/enemy_data.gd" id="4_6wmnk"]
+[ext_resource type="Texture2D" uid="uid://bdy6py0ityv8w" path="res://Import/Texture/enemy.png" id="5_jod13"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oadak"]
+atlas = ExtResource("5_jod13")
+region = Rect2(28, 1, 28, 20)
+
+[resource]
+script = ExtResource("4_6wmnk")
+enemy_id = "enemy_002"
+enemy_name = "木马病毒"
+enemy_type = "fast"
+texture = SubResource("AtlasTexture_oadak")
+scale = Vector2(0.6, 0.6)
+max_health = 110.0
+move_speed = 34.0
+attack_damage = 4.0
+attack_range = 15.0
+attack_cooldown = 5.0

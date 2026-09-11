@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bd1r1a0v1027m"]
+
+[ext_resource type="Script" uid="uid://vkbgfl4ryw7w" path="res://Script/Entity/enemy.gd" id="1_yww8s"]
+
+[node name="Enemy" type="Area2D" unique_id=1755422063]
+script = ExtResource("1_yww8s")
+
+[node name="Texture" type="Sprite2D" parent="." unique_id=753595459]
+scale = Vector2(0.5, 0.5)

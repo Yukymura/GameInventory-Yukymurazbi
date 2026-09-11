@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://g22w25fy2xvf"]
+
+[ext_resource type="Script" uid="uid://i860dwdosfdn" path="res://天边无物res/Box.cs" id="1_oq5cr"]
+[ext_resource type="Texture2D" uid="uid://cd0m55aqx40kc" path="res://天边无物res/icon.png" id="2_8lvag"]
+[ext_resource type="Texture2D" uid="uid://dc7tat73611ml" path="res://天边无物res/box_sp.png" id="2_bqn3j"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t7mxm"]
+atlas = ExtResource("2_8lvag")
+region = Rect2(0, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8lvag"]
+atlas = ExtResource("2_8lvag")
+region = Rect2(32, 160, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h3kpk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t7mxm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8lvag")
+}],
+"loop": true,
+"name": &"del",
+"speed": 5.0
+}]
+
+[node name="Box" type="Marker2D" unique_id=523793241]
+script = ExtResource("1_oq5cr")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1584426681]
+visible = false
+texture = ExtResource("2_bqn3j")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=431184389]
+position = Vector2(-9.23872e-07, 1.5199184e-06)
+sprite_frames = SubResource("SpriteFrames_h3kpk")

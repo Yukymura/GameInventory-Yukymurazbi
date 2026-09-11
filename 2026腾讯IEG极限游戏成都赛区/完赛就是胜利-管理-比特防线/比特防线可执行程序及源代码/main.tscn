@@ -1,0 +1,319 @@
+[gd_scene format=3 uid="uid://bvdfti6cpqld7"]
+
+[ext_resource type="Script" uid="uid://f7gntfh0tsy8" path="res://main.gd" id="1_5vw27"]
+[ext_resource type="PackedScene" uid="uid://biq364qniuaf7" path="res://Scene/battle_panel.tscn" id="2_kek77"]
+[ext_resource type="Theme" uid="uid://cnuyi6qndliw8" path="res://Resource/Theme/theme_1.tres" id="3_4c57u"]
+[ext_resource type="StyleBox" uid="uid://67hnby4jkbpl" path="res://Resource/Theme/StyleBox/style_box_green_3.tres" id="4_efxa6"]
+[ext_resource type="StyleBox" uid="uid://dtq84wneh0f8n" path="res://Resource/Theme/StyleBox/style_box_orange_2.tres" id="5_dg77c"]
+[ext_resource type="StyleBox" uid="uid://dflntckpq7oag" path="res://Resource/Theme/StyleBox/style_box_gray_3.tres" id="6_ycdy4"]
+[ext_resource type="Texture2D" uid="uid://d24c5spsho7kv" path="res://Import/Texture/texture.png" id="7_w48qg"]
+[ext_resource type="StyleBox" uid="uid://c77m7qusm7vwj" path="res://Resource/Theme/StyleBox/style_box_gray_2.tres" id="8_vivmo"]
+[ext_resource type="PackedScene" uid="uid://b8rr1uf2dyo4v" path="res://天边无物res/build_and_reward.tscn" id="9_efxa6"]
+[ext_resource type="PackedScene" uid="uid://7152fjsdpiu0" path="res://Scene/UI/talent_tree.tscn" id="9_kek77"]
+[ext_resource type="Shader" uid="uid://c184y1y2ykmbt" path="res://Resource/Shader/CRT_shader.gdshader" id="10_4c57u"]
+[ext_resource type="PackedScene" uid="uid://b57gmefavu5ep" path="res://天边无物res/drageds/ammo_1.tscn" id="10_ryguw"]
+[ext_resource type="PackedScene" uid="uid://c4dm3px72rxgw" path="res://天边无物res/drageds/ammo_2.tscn" id="11_d13ii"]
+[ext_resource type="PackedScene" uid="uid://ch08g1cqxuam5" path="res://天边无物res/drageds/ammo_3.tscn" id="12_1u8w0"]
+[ext_resource type="PackedScene" uid="uid://corq4wjyi777y" path="res://天边无物res/drageds/arrow.tscn" id="13_0odxb"]
+[ext_resource type="PackedScene" uid="uid://m7ux312qero3" path="res://天边无物res/drageds/created_money.tscn" id="14_lswn8"]
+[ext_resource type="PackedScene" uid="uid://d1yntp8nwtlxu" path="res://天边无物res/drageds/create_bit.tscn" id="15_a6jrf"]
+[ext_resource type="PackedScene" uid="uid://diyudkstkne67" path="res://天边无物res/drageds/magic_1.tscn" id="16_xuqvo"]
+[ext_resource type="PackedScene" uid="uid://bxcgnpppa2he5" path="res://天边无物res/drageds/magic_2.tscn" id="17_qsp4k"]
+[ext_resource type="PackedScene" uid="uid://clfi3eop31mjq" path="res://天边无物res/drageds/three_way.tscn" id="18_kq58d"]
+[ext_resource type="PackedScene" uid="uid://gg02g5j4avxq" path="res://天边无物res/drageds/to_left.tscn" id="19_seu75"]
+[ext_resource type="PackedScene" uid="uid://cv4td16iv4dqg" path="res://天边无物res/drageds/to_right.tscn" id="20_htxhm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qfn4n"]
+atlas = ExtResource("7_w48qg")
+region = Rect2(224, 96, 32, 32)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ixlds"]
+atlas = ExtResource("7_w48qg")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cfc7o"]
+atlas = ExtResource("7_w48qg")
+region = Rect2(64, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hgnv2"]
+atlas = ExtResource("7_w48qg")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_72usj"]
+atlas = ExtResource("7_w48qg")
+region = Rect2(0, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i6qmg"]
+atlas = ExtResource("7_w48qg")
+region = Rect2(64, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g16ci"]
+atlas = ExtResource("7_w48qg")
+region = Rect2(32, 128, 32, 32)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_efxa6"]
+shader = ExtResource("10_4c57u")
+shader_parameter/resolution = Vector2(320, 180)
+shader_parameter/scan_line_amount = 0.2000000095
+shader_parameter/warp_amount = 0.05
+shader_parameter/vignette_amount = 0.2000000095
+shader_parameter/vignette_intensity = 0.3
+shader_parameter/grille_amount = 0.05
+shader_parameter/brightness_boost = 1.2
+
+[node name="Main" type="Node" unique_id=740393002]
+script = ExtResource("1_5vw27")
+
+[node name="BackGround" type="ColorRect" parent="." unique_id=1575632103]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.08429939, 0.16772825, 0.33851287, 1)
+
+[node name="BattlePanel" parent="." unique_id=1612466355 instance=ExtResource("2_kek77")]
+position = Vector2(144, 24)
+metadata/_edit_lock_ = true
+
+[node name="BottomPanel" type="Panel" parent="." unique_id=1922968502]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -204.0
+offset_top = -72.0
+offset_right = 204.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("3_4c57u")
+theme_override_styles/panel = ExtResource("4_efxa6")
+
+[node name="InfoPanel" type="Panel" parent="BottomPanel" unique_id=2101912986]
+layout_mode = 0
+offset_left = 346.0
+offset_top = 3.0
+offset_right = 408.0
+offset_bottom = 79.0
+theme_override_styles/panel = ExtResource("5_dg77c")
+
+[node name="P" type="Panel" parent="BottomPanel/InfoPanel" unique_id=967174875]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = 43.0
+offset_bottom = 26.0
+theme_override_styles/panel = ExtResource("6_ycdy4")
+
+[node name="ElectricTexture" type="TextureRect" parent="BottomPanel/InfoPanel" unique_id=2122360712]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 0
+offset_left = 7.0
+offset_top = 8.0
+offset_right = 23.0
+offset_bottom = 24.0
+texture = SubResource("AtlasTexture_qfn4n")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ElectricLabel" type="Label" parent="BottomPanel/InfoPanel" unique_id=1402079230]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 15.0
+offset_right = 36.0
+offset_bottom = 22.0
+text = "123"
+
+[node name="ShopPanel" type="Panel" parent="BottomPanel" unique_id=528550189]
+layout_mode = 0
+offset_left = 174.0
+offset_top = 3.0
+offset_right = 344.0
+offset_bottom = 79.0
+theme_override_styles/panel = ExtResource("5_dg77c")
+
+[node name="BagPanel" type="Panel" parent="BottomPanel" unique_id=775569482]
+layout_mode = 0
+offset_top = 3.0
+offset_right = 172.0
+offset_bottom = 79.0
+theme_override_styles/panel = ExtResource("8_vivmo")
+
+[node name="TopPanel" type="Panel" parent="." unique_id=1021255204]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -204.0
+offset_top = -12.0
+offset_right = 204.0
+offset_bottom = 24.0
+grow_horizontal = 2
+theme = ExtResource("3_4c57u")
+
+[node name="NextWaveButton" type="Button" parent="TopPanel" unique_id=966027716]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -78.0
+offset_top = 16.0
+offset_right = -18.0
+offset_bottom = 32.0
+grow_horizontal = 0
+text = "下一波(第0波)"
+
+[node name="SettingButton" type="TextureButton" parent="TopPanel" unique_id=1615027852]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 13.0
+offset_right = 37.0
+offset_bottom = 32.0
+texture_normal = SubResource("AtlasTexture_ixlds")
+texture_pressed = SubResource("AtlasTexture_cfc7o")
+texture_hover = SubResource("AtlasTexture_hgnv2")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="TreeButton" type="TextureButton" parent="TopPanel" unique_id=65449240]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 13.0
+offset_right = 61.0
+offset_bottom = 32.0
+texture_normal = SubResource("AtlasTexture_72usj")
+texture_pressed = SubResource("AtlasTexture_i6qmg")
+texture_hover = SubResource("AtlasTexture_g16ci")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="BuildAndReward" parent="." unique_id=62113999 instance=ExtResource("9_efxa6")]
+scale = Vector2(1, 1)
+
+[node name="Build" parent="BuildAndReward" index="0" unique_id=282192579]
+position = Vector2(4, 50)
+ColumnNum = 6
+Space = 24.0
+ShopIndex = Array[Vector2i]([Vector2i(0, 5), Vector2i(1, 5), Vector2i(2, 5), Vector2i(3, 5), Vector2i(4, 5), Vector2i(0, 1), Vector2i(0, 3)])
+
+[node name="Data" parent="BuildAndReward" index="1" unique_id=1506942248]
+Scenes = Array[PackedScene]([ExtResource("10_ryguw"), ExtResource("11_d13ii"), ExtResource("12_1u8w0"), ExtResource("13_0odxb"), ExtResource("14_lswn8"), ExtResource("15_a6jrf"), ExtResource("16_xuqvo"), ExtResource("17_qsp4k"), ExtResource("18_kq58d"), ExtResource("19_seu75"), ExtResource("20_htxhm")])
+
+[node name="Reward" parent="BuildAndReward" index="2" unique_id=1585803302]
+position = Vector2(177, 177)
+Space = 24.0
+
+[node name="Package" parent="BuildAndReward" index="3" unique_id=1538398920]
+position = Vector2(5, 177)
+Space = 24.0
+
+[node name="Shop" parent="BuildAndReward" index="4" unique_id=1635822688]
+position = Vector2(177, 199)
+Space = 24.0
+
+[node name="del" parent="BuildAndReward" index="5" unique_id=100558318]
+position = Vector2(125, 226)
+
+[node name="RefreshShop" parent="BuildAndReward" index="6" unique_id=344141048]
+position = Vector2(177, 224)
+Space = 24.0
+
+[node name="Button" parent="BuildAndReward/RefreshShop" index="0" unique_id=674845224]
+offset_left = 97.0
+offset_top = -0.9999924
+offset_right = 292.0
+offset_bottom = 67.18183
+scale = Vector2(0.21054786, 0.29088855)
+metadata/_edit_use_anchors_ = true
+
+[node name="TalentTree" parent="." unique_id=1548876539 instance=ExtResource("9_kek77")]
+visible = false
+
+[node name="ExitPanel" type="Panel" parent="." unique_id=100420904]
+z_index = 100
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -4.0
+offset_bottom = -165.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_4c57u")
+theme_override_styles/panel = ExtResource("8_vivmo")
+
+[node name="Label" type="Label" parent="ExitPanel" unique_id=1099142208]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 13.0
+offset_right = 350.0
+offset_bottom = 36.0
+text = "欢迎来到比特防线！先放置子弹生产模块，再用箭头管道连接模块与防御塔，搭建好供弹线路后，子弹就会沿管道输送至塔中，自动攻击来袭小怪，守护城墙不被攻破~"
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="ExitPanel" unique_id=818965845]
+layout_mode = 0
+offset_left = 178.0
+offset_top = 36.0
+offset_right = 206.0
+offset_bottom = 48.0
+text = "关闭提示"
+
+[node name="EndPanel" type="Panel" parent="." unique_id=744816807]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_4c57u")
+
+[node name="Label" type="Label" parent="EndPanel" unique_id=1700710373]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -3.5
+offset_right = 20.0
+offset_bottom = 3.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "游戏胜利"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="EndPanel" unique_id=481489743]
+custom_minimum_size = Vector2(60, 20)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -31.0
+offset_top = 41.0
+offset_right = 29.0
+offset_bottom = 61.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "返回主菜单"
+
+[node name="ScreenEffect" type="ColorRect" parent="." unique_id=1032514297]
+top_level = true
+material = SubResource("ShaderMaterial_efxa6")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_lock_ = true
+
+[connection signal="ToTower" from="BuildAndReward" to="BattlePanel" method="add_ammo_to_turret"]
+
+[editable path="BuildAndReward"]

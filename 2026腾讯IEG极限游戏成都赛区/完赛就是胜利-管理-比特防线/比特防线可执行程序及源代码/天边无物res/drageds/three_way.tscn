@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://clfi3eop31mjq"]
+
+[ext_resource type="PackedScene" uid="uid://d1hj5iyq4bqyh" path="res://天边无物res/draged.tscn" id="1_j7nku"]
+[ext_resource type="Texture2D" uid="uid://cd0m55aqx40kc" path="res://天边无物res/icon.png" id="2_4vowh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xlyev"]
+atlas = ExtResource("2_4vowh")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a4tnx"]
+atlas = ExtResource("2_4vowh")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yduse"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xlyev")
+}],
+"loop": true,
+"name": &"activate",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a4tnx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="ThreeWay" unique_id=1311795775 instance=ExtResource("1_j7nku")]
+OriginCost = 20
+Tip = "  导线：输送比特和字节的线路。"
+FromTo = Array[Vector2i]([Vector2i(3, 0), Vector2i(3, 1), Vector2i(3, 2)])
+
+[node name="AnimatedSprite2D" parent="." index="1" unique_id=220510021]
+sprite_frames = SubResource("SpriteFrames_yduse")
+animation = &"activate"
